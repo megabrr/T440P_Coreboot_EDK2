@@ -7,8 +7,8 @@ All the command are run in MX Linux. They should work in other debian variant.
 # Befor we begin
 Make sure your linux distribution is up to date
 ```console
-user@mx:sudo apt update -y
-user@mx:sudo apt upgrade -y
+foo@bar:~$ sudo apt update -y
+foo@bar:~$ sudo apt upgrade -y
 ```
 
 # Step 1
