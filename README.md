@@ -6,9 +6,9 @@ All the command are run in MX Linux. They should work in other debian variant.
 
 # Befor we begin
 Make sure your linux distribution is up to date
-```console
-$ sudo apt update -y
-$ sudo apt upgrade -y
+```
+sudo apt update -y
+sudo apt upgrade -y
 ```
 
 # Step 1
