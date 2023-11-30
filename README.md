@@ -4,14 +4,16 @@ How-to Coreboot a Thinkpad T440p with the EDK2 Payload.
 This guide assumes that you have an unlucked Bios (i.e. able to use flashrom - p internal).
 All the command are run in MX Linux. They should work in other debian variant.
 
-# Befor we begin
-Make sure your linux distribution is up to date
+**WARNING: If the current OS installed on the laptop is working in legacy bios mode (i.e. not using uefi), the OS won't boot after flashing EDK2**
+
+## Before we begin
+Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
 ```
 
-# Step 1
+## Step 1
 Use Libreboot script to install all the dependencies.
 ```
 sudo apt install -y python-is-python3
@@ -19,11 +21,11 @@ git clone https://codeberg.org/libreboot/lbmk
 cd lbmk/
 sudo ./build dependencies debian 
 ```
-# Step 2
+## Step 2
 Use Libreboot to get all the necessary Blobs.
 
 
-# Step 3
+## Step 3
 Configure Coreboot
 ```
 sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev
@@ -46,5 +48,5 @@ make
 ```
 
 
-# Step 4
+## Step 4
 Flash
