@@ -1,6 +1,6 @@
 # How-to Coreboot a Thinkpad T440p with the EDK2 Payload (UEFI).
 
-This guide assumes that you have an unlucked Bios (i.e. able to use flashrom - p internal).
+This guide assumes that you have an unlocked Bios (i.e. able to use flashrom - p internal).
 All the commands are run in MX Linux. They should work in other debian variant.
 
 **WARNING: If the current OS installed on the laptop is working in legacy bios mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
