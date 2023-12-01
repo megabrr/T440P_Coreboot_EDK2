@@ -78,13 +78,13 @@ What I'm using (don't forget to change the path):
 ```
 ###Blobs section
 CONFIG_HAVE_IFD_BIN=y
-CONFIG_IFD_BIN_PATH="/home/user/t440p/blobs/ifd"
+CONFIG_IFD_BIN_PATH="~/t440p/ifd"
 CONFIG_HAVE_ME_BIN=y
-CONFIG_ME_BIN_PATH="/home/user/t440p/blobs/me.bin"
+CONFIG_ME_BIN_PATH="~/t440p/me.bin"
 CONFIG_HAVE_GBE_BIN=y
-CONFIG_GBE_BIN_PATH="/home/user/t440p/blobs/gbe"
+CONFIG_GBE_BIN_PATH="~/t440p/gbe"
 CONFIG_HAVE_MRC=y
-CONFIG_MRC_FILE="/home/user/t440p/blobs/mrc.bin"
+CONFIG_MRC_FILE="~/t440p/mrc.bin"
 #
 ###Config option
 CONFIG_BOOTSPLASH=y
