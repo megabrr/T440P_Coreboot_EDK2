@@ -9,8 +9,7 @@ All the commands are run in MX Linux 23.1. They should work in other Debian vari
 ```
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom autoconf automake gettext autopoint pkg-config 
-grub-common libfreetype6-dev unifont unifont-bin xfonts-unifont
+sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom autoconf automake gettext autopoint pkg-config grub-common libfreetype6-dev unifont unifont-bin xfonts-unifont
 
 ```
 
