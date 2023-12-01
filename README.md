@@ -157,7 +157,7 @@ cp ~/coreboot/build/coreboot.rom ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 Flash the rom.
 ```
 sudo modprobe -r lpc_ich
-sudo flashrom -p internal -w ~/t440/t440pmrc_12mb_coreboot_edk2.rom
+sudo flashrom -p internal -w ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 ```
 Reboot...
 
