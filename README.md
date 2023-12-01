@@ -37,10 +37,10 @@ Build the T440P rom from lmbk
 Copy the blobs
 ```
 mkdir ~/t440p
-cp ~/lbmk/vendorfiles/t440p/me.bin
-cp ~/lbmk/mrc/haswell/mrc.bin
-cp ~/lbmk/config/ifd/gbe
-cp ~/lbmk/config/ifd/ifd
+cp ~/lbmk/vendorfiles/t440p/me.bin ~/t440p
+cp ~/lbmk/mrc/haswell/mrc.bin ~/t440p
+cp ~/lbmk/config/ifd/gbe ~/t440p
+cp ~/lbmk/config/ifd/ifd ~/t440p
 ```
 
 ## Step 4 - Configure Coreboot
@@ -122,6 +122,10 @@ make
 ```
 
 ## Step 6 - Flash Coreboot with Flashrom
-Flash
+```
+backup created rom
+sudo modprobe -r lpc_ich
+sudo flashrom -p internal -w ~/coreboot/bin/coreboot.rom
+```
 
 ## Step 7 - verify thar ME is both neutered and disabled
