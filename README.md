@@ -216,4 +216,4 @@ ME: failed to become ready
 ME: failed to become ready
 ME: GET FW VERSION message failed
 ```
-## Step 7 - Enjoy tour Corbooted laptop!
+## Step 7 - Enjoy your Corbooted laptop!
