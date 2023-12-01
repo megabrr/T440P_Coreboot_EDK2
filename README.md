@@ -14,6 +14,7 @@ sudo apt upgrade -y
 
 ## Step 2 - Use Libreboot script to install all the dependencies.
 ```
+cd ~
 sudo apt install -y python-is-python3
 git clone https://codeberg.org/libreboot/lbmk
 cd lbmk/
@@ -32,12 +33,15 @@ Build the T440P rom from lmbk
 ```
 Copy the blobs
 ```
+mkdir ~/t440p
+cp...
 ```
 
 ## Step 4 - Configure Coreboot
 Download and checkout Coreboot with GIT. I'm using version 4.22.01. If you want to use anything else you can find the tag or the branch here:
 https://review.coreboot.org/plugins/gitiles/coreboot
 ```
+cd ~
 sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev
 git clone https://review.coreboot.org/coreboot.git
 cd coreboot/
