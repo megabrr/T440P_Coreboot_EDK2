@@ -10,7 +10,8 @@ Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom
+sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom unifont-bin
+
 ```
 
 ## Step 2 - Use Libreboot script to install all the dependencies.
