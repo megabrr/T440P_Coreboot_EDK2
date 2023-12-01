@@ -148,6 +148,24 @@ If everthing went well you should see:
 Built lenovo/haswell (ThinkPad T440p)
 
 ```
+Verify that ME is both neutered and disabled before flashing
+```
+~/coreboot/util/me_cleaner
+./me_cleaner.py -c ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
+
+```
+Expected result:
+```
+Full image detected
+The ME/TXE region goes from 0x3000 to 0x21000
+Found FPT header at 0x3010
+Found 1 partition(s)
+Found FTPR header: FTPR partition spans from 0x1740 to 0xb1740
+ME/TXE firmware version 9.1.45.3000
+Public key match: Intel ME, firmware versions 9.0.x.x, 9.1.x.x
+The AltMeDisable bit is SET
+Checking the FTPR RSA signature... VALID
+```
 
 ## Step 6 - Flash Coreboot with Flashrom
 Copy the rom you just build somewhere safe.
@@ -161,7 +179,7 @@ sudo flashrom -p internal -w ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 ```
 Reboot...
 
-## Step 7 - Verify that ME is both neutered and disabled
+## Step 7 - Verify that ME is both neutered and disabled after flashing
 https://github.com/corna/me_cleaner/wiki/Get-the-status-of-Intel-ME
 ```
 cd ~/coreboot/util/intelmetool
