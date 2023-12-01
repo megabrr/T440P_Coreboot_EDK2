@@ -152,7 +152,7 @@ Built lenovo/haswell (ThinkPad T440p)
 ## Step 6 - Flash Coreboot with Flashrom
 Copy the rom you just build somewhere safe.
 ```
-cp ~/coreboot/bin/coreboot.rom ~/t440/t440pmrc_12mb_coreboot_edk2.rom
+cp ~/coreboot/build/coreboot.rom ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 ```
 Flash the rom.
 ```
