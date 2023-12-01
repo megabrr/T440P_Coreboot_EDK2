@@ -163,9 +163,10 @@ Found 1 partition(s)
 Found FTPR header: FTPR partition spans from 0x1740 to 0xb1740
 ME/TXE firmware version 9.1.45.3000
 Public key match: Intel ME, firmware versions 9.0.x.x, 9.1.x.x
-**The AltMeDisable bit is SET**
+The AltMeDisable bit is SET
 Checking the FTPR RSA signature... VALID
 ```
+If you see **Found 1 partition(s)** and **The AltMeDisable bit is SET** , it means respectively that only one partition is left (-S or no options) and that the HAP/AltMeDisable bit is set (-S/-s options).
 
 ## Step 6 - Flash Coreboot with Flashrom
 Copy the rom you just build somewhere safe.
@@ -216,3 +217,4 @@ ME: failed to become ready
 ME: failed to become ready
 ME: GET FW VERSION message failed
 ```
+## Step 7 - Enjoy tour Corbooted laptop!
