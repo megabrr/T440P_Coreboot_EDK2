@@ -6,7 +6,6 @@ All the commands are run in MX Linux 23.1. They should work in other Debian vari
 **WARNING: If the current OS installed on the laptop is working in legacy mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
 
 ## Step 1 - Install tools and libraries needed for coreboot
-Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
