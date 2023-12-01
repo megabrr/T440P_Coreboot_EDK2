@@ -37,7 +37,10 @@ Build the T440P rom from lmbk
 Copy the blobs
 ```
 mkdir ~/t440p
-cp...
+cp ~/lbmk/vendorfiles/t440p/me.bin
+cp ~/lbmk/mrc/haswell/mrc.bin
+cp ~/lbmk/config/ifd/gbe
+cp ~/lbmk/config/ifd/ifd
 ```
 
 ## Step 4 - Configure Coreboot
