@@ -150,7 +150,7 @@ Built lenovo/haswell (ThinkPad T440p)
 ```
 Verify that ME is both neutered and disabled before flashing
 ```
-~/coreboot/util/me_cleaner
+cd ~/coreboot/util/me_cleaner
 ./me_cleaner.py -c ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 
 ```
