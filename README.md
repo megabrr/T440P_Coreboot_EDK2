@@ -163,7 +163,7 @@ Found 1 partition(s)
 Found FTPR header: FTPR partition spans from 0x1740 to 0xb1740
 ME/TXE firmware version 9.1.45.3000
 Public key match: Intel ME, firmware versions 9.0.x.x, 9.1.x.x
-The AltMeDisable bit is SET
+**The AltMeDisable bit is SET**
 Checking the FTPR RSA signature... VALID
 ```
 
