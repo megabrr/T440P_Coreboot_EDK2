@@ -1,7 +1,7 @@
 # How-to Coreboot a Thinkpad T440p with the EDK2 Payload (UEFI).
 
 This guide assumes that you have an unlocked Bios and a **backup of the original Bios** (i.e. able to use flashrom - p internal).
-All the commands are run in MX Linux. They should work in other debian variant.
+All the commands are run in MX Linux 23.1. They should work in other Debian variant.
 
 **WARNING: If the current OS installed on the laptop is working in legacy mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
 
@@ -161,4 +161,40 @@ sudo flashrom -p internal -w ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
 ```
 Reboot...
 
-## Step 7 - verify thar ME is both neutered and disabled
+## Step 7 - Verify that ME is both neutered and disabled
+https://github.com/corna/me_cleaner/wiki/Get-the-status-of-Intel-ME
+```
+cd ~/coreboot/util/intelmetool
+make
+sudo ./intelmetool -m
+```
+If everything went well you should see:
+```
+Checking for development libraries: pci and zlib... found.
+Bad news, you have a `QM87 Express LPC Controller` so you have ME hardware on board and you can't control or disable it, continuing...
+
+MEI found: [8086:8c3a] 8 Series/C220 Series Chipset Family MEI Controller #1
+
+ME Status   : 0x1e020191
+ME Status 2 : 0x164d2142
+
+ME: FW Partition Table      : OK
+ME: Bringup Loader Failure  : NO
+ME: Firmware Init Complete  : NO
+ME: Manufacturing Mode      : YES
+ME: Boot Options Present    : NO
+ME: Update In Progress      : NO
+ME: Current Working State   : Initializing
+ME: Current Operation State : Bring up
+ME: Current Operation Mode  : Debug
+ME: Error Code              : No Error
+ME: Progress Phase          : BUP Phase
+ME: Power Management Event  : Pseudo-global reset
+ME: Progress Phase State    : 0x4d
+
+ME: Extend SHA-256: 9bcd2f1eb9b163690f6ee10a57fb83f9c5544aeaa29c91040ec4c77f6bc7fa3c
+
+ME: failed to become ready
+ME: failed to become ready
+ME: GET FW VERSION message failed
+```
