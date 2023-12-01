@@ -47,8 +47,8 @@ Copy the blobs
 mkdir ~/t440p
 cp ~/lbmk/vendorfiles/t440p/me.bin ~/t440p
 cp ~/lbmk/mrc/haswell/mrc.bin ~/t440p
-cp ~/lbmk/config/ifd/gbe ~/t440p
-cp ~/lbmk/config/ifd/ifd ~/t440p
+cp ~/lbmk/config/ifd/t440p/gbe ~/t440p
+cp ~/lbmk/config/ifd/t440p/ifd ~/t440p
 ```
 
 ## Step 4 - Configure Coreboot
