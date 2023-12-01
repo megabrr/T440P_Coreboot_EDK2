@@ -5,11 +5,12 @@ All the commands are run in MX Linux. They should work in other debian variant.
 
 **WARNING: If the current OS installed on the laptop is working in legacy bios mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
 
-## Step 1 - Linux upgrade
+## Step 1 - Install tools and libraries needed for coreboot
 Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom
 ```
 
 ## Step 2 - Use Libreboot script to install all the dependencies.
@@ -42,7 +43,6 @@ Download and checkout Coreboot with GIT. I'm using version 4.22.01. If you want 
 https://review.coreboot.org/plugins/gitiles/coreboot
 ```
 cd ~
-sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev
 git clone https://review.coreboot.org/coreboot.git
 cd coreboot/
 git checkout d5e80fa9d22ae17ca80276e1d663333e0932c399
