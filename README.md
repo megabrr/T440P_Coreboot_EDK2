@@ -34,6 +34,14 @@ Build the T440P rom from lmbk
 ```
 ./build roms t440pmrc_12mb
 ```
+If everything goes well, you should see the following message.
+```
+ROM images available in these directories:
+* bin/t440pmrc_12mb
+^^ ROM images available in these directories.
+
+DO NOT flash ROM images from elf/ - please use bin/ instead.
+```
 Copy the blobs
 ```
 mkdir ~/t440p
