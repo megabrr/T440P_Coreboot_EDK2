@@ -20,7 +20,19 @@ cd lbmk/
 sudo ./build dependencies debian 
 ```
 ## Step 3 - Use Libreboot to get all the necessary Blobs.
-
+Configure GIT
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+Build the T440P rom from lmbk
+(We will not use the rom itself, but simply copy the blobs)
+```
+./build roms t440pmrc_12mb
+```
+Copy the blobs
+```
+```
 
 ## Step 4 - Configure Coreboot
 Download and checkout Coreboot with GIT. I'm using version 4.22.01. If you want to use anything else you can find the tag or the branch here:
