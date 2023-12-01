@@ -10,7 +10,8 @@ Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom unifont-bin
+sudo apt-get install -y bison build-essential curl flex git gnat libncurses5-dev m4 zlib1g-dev flashrom autoconf automake gettext autopoint pkg-config 
+grub-common libfreetype6-dev unifont unifont-bin xfonts-unifont
 
 ```
 
