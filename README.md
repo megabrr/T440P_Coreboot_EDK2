@@ -128,12 +128,37 @@ make nconfig
 (save with F6 and exit with F9)
 make
 ```
+If everthing went well you should see:
+```
+    HOSTCC     cbfstool/ifwitool.o
+    HOSTCC     cbfstool/ifwitool (link)
+    HOSTCC     cbfstool/cse_fpt.o
+    HOSTCC     cbfstool/cse_helpers.o
+    HOSTCC     cbfstool/fpt_hdr_20.o
+    HOSTCC     cbfstool/fpt_hdr_21.o
+    HOSTCC     cbfstool/cse_fpt (link)
+    HOSTCC     cbfstool/cse_serger.o
+    HOSTCC     cbfstool/bpdt_1_6.o
+    HOSTCC     cbfstool/bpdt_1_7.o
+    HOSTCC     cbfstool/subpart_hdr_1.o
+    HOSTCC     cbfstool/subpart_hdr_2.o
+    HOSTCC     cbfstool/subpart_entry_1.o
+    HOSTCC     cbfstool/cse_serger (link)
+
+Built lenovo/haswell (ThinkPad T440p)
+
+```
 
 ## Step 6 - Flash Coreboot with Flashrom
+Copy the rom you just build somewhere safe.
 ```
-backup created rom
+cp ~/coreboot/bin/coreboot.rom ~/t440/t440pmrc_12mb_coreboot_edk2.rom
+```
+Flash the rom.
+```
 sudo modprobe -r lpc_ich
-sudo flashrom -p internal -w ~/coreboot/bin/coreboot.rom
+sudo flashrom -p internal -w ~/t440/t440pmrc_12mb_coreboot_edk2.rom
 ```
+Reboot...
 
 ## Step 7 - verify thar ME is both neutered and disabled
