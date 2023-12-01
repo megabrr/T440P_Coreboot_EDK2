@@ -1,28 +1,28 @@
 # How-to Coreboot a Thinkpad T440p with the EDK2 Payload (UEFI).
 
-This guide assumes that you have an unlocked Bios (i.e. able to use flashrom - p internal).
+This guide assumes that you have an unlocked Bios and a **backup of the original Bios** (i.e. able to use flashrom - p internal).
 All the commands are run in MX Linux. They should work in other debian variant.
 
 **WARNING: If the current OS installed on the laptop is working in legacy bios mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
 
-## Before we begin
+## Step 1 - Linux upgrade
 Make sure your linux distribution is up to date.
 ```
 sudo apt update -y
 sudo apt upgrade -y
 ```
 
-## Step 1 - Use Libreboot script to install all the dependencies.
+## Step 2 - Use Libreboot script to install all the dependencies.
 ```
 sudo apt install -y python-is-python3
 git clone https://codeberg.org/libreboot/lbmk
 cd lbmk/
 sudo ./build dependencies debian 
 ```
-## Step 2 - Use Libreboot to get all the necessary Blobs.
+## Step 3 - Use Libreboot to get all the necessary Blobs.
 
 
-## Step 3 - Configure Coreboot
+## Step 4 - Configure Coreboot
 Download and checkout Coreboot with GIT. I'm using version 4.22.01. If you want to use anything else you can find the tag or the branch here:
 https://review.coreboot.org/plugins/gitiles/coreboot
 ```
@@ -40,7 +40,7 @@ make -C payloads/coreinfo olddefconfig
 make -C payloads/coreinfo
 cd util/ifdtool && make
 ```
-## Step 4 - Create the config and build the rom.
+## Step 5 - Create the config and build the rom.
 ```
 nano .config
 ```
@@ -81,6 +81,7 @@ make nconfig
 make
 ```
 
-
-## Step 5
+## Step 6 - Flash Coreboot with Flashrom
 Flash
+
+## Step 7 - verify thar ME is both neutered and disabled
