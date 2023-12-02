@@ -153,6 +153,10 @@ If everthing went well you should see:
 Built lenovo/haswell (ThinkPad T440p)
 
 ```
+Copy the rom you just build somewhere safe.
+```
+cp ~/coreboot/build/coreboot.rom ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
+```
 Verify that ME is both neutered and disabled before flashing
 ```
 cd ~/coreboot/util/me_cleaner
@@ -174,10 +178,6 @@ Checking the FTPR RSA signature... VALID
 If you see **Found 1 partition(s)** and **The AltMeDisable bit is SET** , it means respectively that only one partition is left (-S or no options) and that the HAP/AltMeDisable bit is set (-S/-s options).
 
 ## Step 6 - Flash Coreboot with Flashrom
-Copy the rom you just build somewhere safe.
-```
-cp ~/coreboot/build/coreboot.rom ~/t440p/t440pmrc_12mb_coreboot_edk2.rom
-```
 Flash the rom.
 ```
 sudo modprobe -r lpc_ich
