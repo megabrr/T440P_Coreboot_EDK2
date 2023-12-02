@@ -69,6 +69,7 @@ cd util/ifdtool && make
 ```
 ## Step 5 - Create the config and build the rom.
 ```
+cd ~/coreboot
 nano .config
 ```
 (Copy the config here then ctrl+x > Y to save)
