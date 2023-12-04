@@ -4,6 +4,7 @@ This guide assumes that you have an **unlocked Bios** (i.e. able to use flashrom
 All the commands are run in MX Linux 23.1. They should work in other Debian variant.
 
 **WARNING: If the current OS installed on the laptop is working in legacy mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
+**DOES NOT WORK WITH WINDOWS**
 
 ## Step 1 - Install tools and libraries needed for coreboot
 ```
