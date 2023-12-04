@@ -125,10 +125,8 @@ CONFIG_COMPRESSED_PAYLOAD_LZMA=y
 Build the rom.
 ```
 make savedefconfig
-cat defconfig
-(To make sure everything is OK)
-make nconfig
-(save with F6 and exit with F9)
+cat defconfig #To make sure everything is OK
+make nconfig #save with F6 and exit with F9
 make
 ```
 If everthing went well you should see:
