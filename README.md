@@ -1,11 +1,9 @@
 # How-to Coreboot a Thinkpad T440p with the EDK2 Payload (UEFI).
 
-**DOES NOT WORK WITH WINDOWS**
-
 This guide assumes that you have an **unlocked Bios** (i.e. able to use flashrom - p internal) and a **backup of the original Bios** somewhere safe in case anything goes wrong.
 All the commands are run in MX Linux 23.1. They should work in other Debian variant.
 
-**WARNING: If the current OS installed on the laptop is working in legacy mode (i.e. not using uefi), the OS won't boot after flashing EDK2 and you will have to reinstall.**
+**WARNING: If the current OS installed on the laptop is working in legacy mode (i.e. not using GPT partition style), the OS won't boot after flashing EDK2 and you will have to reinstall.**
 
 ## Step 1 - Install tools and libraries needed for coreboot
 ```
@@ -75,53 +73,29 @@ cd ~/coreboot
 nano .config
 ```
 (Copy the config here then ctrl+x > Y to save)
-What I'm using (don't forget to change the path):
+What I'm using (don't forget to change the paths):
 ```
-###Blobs section
-CONFIG_HAVE_IFD_BIN=y
+CONFIG_USE_OPTION_TABLE=y
+CONFIG_VENDOR_LENOVO=y
+CONFIG_MAINBOARD_PART_NUMBER="ThinkPad t440p"
+CONFIG_CBFS_SIZE=0x400000
+CONFIG_ONBOARD_VGA_IS_PRIMARY=y
 CONFIG_IFD_BIN_PATH="/home/user/t440p/ifd"
-CONFIG_HAVE_ME_BIN=y
 CONFIG_ME_BIN_PATH="/home/user/t440p/me.bin"
-CONFIG_HAVE_GBE_BIN=y
 CONFIG_GBE_BIN_PATH="/home/user/t440p/gbe"
+CONFIG_HAVE_IFD_BIN=y
 CONFIG_HAVE_MRC=y
 CONFIG_MRC_FILE="/home/user/t440p/mrc.bin"
-#
-###Config option
-CONFIG_BOOTSPLASH=y
-CONFIG_USE_OPTION_TABLE=y
-CONFIG_TIMESTAMPS_ON_CONSOLE=y
-CONFIG_VENDOR_LENOVO=y
-CONFIG_CBFS_SIZE=0x800000
-CONFIG_CONSOLE_CBMEM_BUFFER_SIZE=0x20000
-CONFIG_BOARD_LENOVO_THINKPAD_T440P=y
-CONFIG_UART_PCI_ADDR=0x0
 CONFIG_VALIDATE_INTEL_DESCRIPTOR=y
 CONFIG_H8_SUPPORT_BT_ON_WIFI=y
-CONFIG_SUBSYSTEM_VENDOR_ID=0x0000
-CONFIG_SUBSYSTEM_DEVICE_ID=0x0000
-CONFIG_I2C_TRANSFER_TIMEOUT_US=500000
-CONFIG_SMMSTORE_SIZE=0x40000
+CONFIG_HAVE_ME_BIN=y
+CONFIG_CHECK_ME=y
+CONFIG_ME_REGION_ALLOW_CPU_READ_ACCESS=y
+CONFIG_HAVE_GBE_BIN=y
 CONFIG_DRIVERS_PS2_KEYBOARD=y
-CONFIG_TPM_DEACTIVATE=y
-CONFIG_SECURITY_CLEAR_DRAM_ON_REGULAR_BOOT=y
-CONFIG_POST_IO_PORT=0x80
-CONFIG_PCIEXP_HOTPLUG=y
-CONFIG_PCIEXP_HOTPLUG_IO=0x2000
-CONFIG_GENERIC_LINEAR_FRAMEBUFFER=y
-
-#
-###Payload section
+CONFIG_USE_PC_CMOS_ALTCENTURY=y
 CONFIG_PAYLOAD_EDK2=y
-CONFIG_EDK2_UEFIPAYLOAD=y
-CONFIG_EDK2_CUSTOM_BUILD_PARAMS=""
-CONFIG_EDK2_BOOT_TIMEOUT=4
-CONFIG_EDK2_FULL_SCREEN_SETUP=y
-CONFIG_EDK2_DISABLE_TPM=y
-CONFIG_EDK2_HAVE_EFI_SHELL=y
-CONFIG_EDK2_PRIORITIZE_INTERNAL=y
 CONFIG_EDK2_BOOT_MANAGER_ESCAPE=y
-CONFIG_COMPRESSED_PAYLOAD_LZMA=y
 
 ```
 Build the rom.
